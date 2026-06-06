@@ -25,7 +25,10 @@
            <span role="img" arial-label='blog' title='blog'>📰</span>
         </a> |
         <a href="{% url "users:register" %}">
-           <span role="img" arial-label='user-register' title='user-register'>📑</span>
+           <span role="img" arial-label='user register' title='user register'>📑</span>
+        </a> |
+        <a href="{% url "users:login" %}">
+           <span role="img" arial-label='user login' title='user login'>🔏</span>
         </a>
     </nav>
     {% block content %}    

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    User Login
+{% endblock title %}
+
+{% block content %}
+    <h2>User Authentication</h2>
+    <form class='form-with-validation' action={% url "users:login" %} method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button class='form-submit'>
+            submit
+        </button>
+    </form>
+{% endblock content %}

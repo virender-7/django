@@ -1,0 +1,1 @@
+console.log('this console log for {{title}} page')

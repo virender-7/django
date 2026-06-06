@@ -16,24 +16,32 @@
     <nav> 
         <a href="{% url "home" %}">
           <span role="img" arial-label='Home' title= 'Home'>🏚️</span>  
-        </a>  |
+        </a>  | 
         <a href="{% url "about" %}">
             <span role="img" arial-label='about' title='about'>🕵️
             </span>
-            </a> |
+            </a> | 
         <a href="{% url "posts:list" %}">
            <span role="img" arial-label='blog' title='blog'>📰</span>
-        </a> |
-        <a href="{% url "users:register" %}">
-           <span role="img" arial-label='user register' title='user register'>📑</span>
-        </a> |
-        <a href="{% url "users:login" %}">
-           <span role="img" arial-label='user login' title='user login'>🔏</span>
-        </a> |
+        </a> | 
+        {% if user.is_authenticated %}
+        <a href="{% url "posts:new-post" %}">
+           <span role="img" arial-label='post new' title='post new'>🆕</span>
+        </a> | 
         <form class='logout' action={% url "users:logout" %} method='post'>
             {% csrf_token %}
             <button class="logout-button" arial-label="user logout" title='user logout'>🔓</button>
         </form>
+
+        {% else %}
+        <a href="{% url "users:register" %}">
+           <span role="img" arial-label='user register' title='user register'>📑</span>
+        </a> | 
+        <a href="{% url "users:login" %}">
+           <span role="img" arial-label='user login' title='user login'>🔏</span>
+        </a> 
+
+        {% endif %}
     </nav>
     {% block content %}    
     {% endblock content %}

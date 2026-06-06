@@ -98,6 +98,7 @@ a:hover {
 
 .logout {
     display: inline-block;
+    align-self: flex-end;
 }
 
 .logout-button {

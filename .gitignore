@@ -1,0 +1,17 @@
+# Python bytecode (compiled files)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (adjust name if yours is different, e.g., venv, .venv)
+.venv/
+
+# Django local settings and secrets
+.env
+
+
+# Database (Never commit your local development database)
+#db.sqlite3
+
+#ignore particular floder
+blog/

@@ -29,7 +29,11 @@
         </a> |
         <a href="{% url "users:login" %}">
            <span role="img" arial-label='user login' title='user login'>🔏</span>
-        </a>
+        </a> |
+        <form class='logout' action={% url "users:logout" %} method='post'>
+            {% csrf_token %}
+            <button class="logout-button" arial-label="user logout" title='user logout'>🔓</button>
+        </form>
     </nav>
     {% block content %}    
     {% endblock content %}
